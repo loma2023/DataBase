@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>الفاتورة</title>
+
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+
+    <div class="container">
+        <div class="navigation"></div>
+
+        <!-- ========================= Main ==================== -->
+
+        <div class="main">
+            <div class="topbar"></div>
+            <div class="container2">
+                <div>
+                    <form>
+                        <input class="date" type="date">
+                        <select class="typeReceipt" onchange="typeReceipt(value)">
+                            <option value="0" disabled selected hidden>نوع الفاتورة </option>
+                            <option value="تأجير آجل">تأجير آجل</option>
+                            <option value="استئجار آجل">استئجار آجل</option>
+                            <option value="تأجير نقدي">تأجير نقدي</option>
+                            <option value="استئجار نقدي">استئجار نقدي </option>
+                        </select>
+
+                        <select class="nameCustomer">
+                            <option value="0" disabled selected hidden>اسم العميل</option>
+                        </select>
+
+                        <input class="nu" type="number" placeholder="رقم الفاتورة" disabled>
+
+                    </form>
+
+                    <!-- ================= New Customers ================ -->
+                    <form class="Formitem">
+                        <input class="quantity" type="number" placeholder="الكميه">
+                        <input class="item" type="text" placeholder="الصنف">
+                        <input class="price" type="number" placeholder="القيمة ">
+                        <input class="statement" type="text" placeholder="بيان">
+                        <input class="btn_save" type="button" value="إضافة" onclick="additem(id)" id="save">
+                    </form>
+
+
+                    <div class="recentOrders">
+                        <table>
+                            <thead class="table-head">
+                                <tr>
+                                    <td>الكميه</td>
+                                    <td>الصنف</td>
+                                    <td>القيمه</td>
+                                    <td>البيان</td>
+                                    <td style="width: 150px;">تعديل - حذف</td>
+                                </tr>
+                            </thead>
+
+                            <tbody class="table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="cardBox">
+                        <div class="card">
+                            <div>
+                                <div class="numbers subTotal">0</div>
+                                <div class="cardName">القيمة</div>
+                            </div>
+
+                            <div class="iconBx">
+                                <ion-icon name="cash-outline"></ion-icon>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div>
+                                <div class="numbers"><input type="number" class="Discount" value="0" onkeyup="total()" onchange="total()"></div>
+                                <div class="cardName">الخصم</div>
+                            </div>
+
+                            <div class="iconBx">
+                                <ion-icon name="cash-outline"></ion-icon>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div>
+                                <div class="numbers Total">0</div>
+                                <div class="cardName">الاجمالى</div>
+                            </div>
+
+                            <div class="iconBx">
+                                <ion-icon name="cash-outline"></ion-icon>
+                            </div>
+                        </div>
+
+
+                        <div id="save" onclick="insert_value(id)" class="card btn_insert">
+                            <button>حــفــظ</button>
+                        </div>
+
+                        <div onclick="Go()" class="card">
+                            <button >اضغط هنا لتعديل فاتورة</button>
+                        </div>
+                        <!-- ================= New Customers ================ -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- =========== Scripts =========  -->
+    <script src="JS/main.js"></script>
+    <script src="JS/General_Receipt.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

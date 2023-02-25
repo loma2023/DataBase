@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>العملاء</title>
+
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+
+    <div class="container">
+        <div class="navigation"></div>
+
+        <!-- ========================= Main ==================== -->
+
+        <div class="main">
+            <div class="topbar"></div>
+
+            <div class="cardBox1">
+                <a href="Data_Customers.html" class="card">بيانات العملاء</a>
+                <a href="Account_Customer.html" class="card">كشف حساب عميل</a>
+                <a href="General_Customer1.html" class="card">التحصيل من عميل</a>
+                <a href="General_Customer2.html" class="card"> الدفع لـ عميل</a>
+            </div>
+            <!-- ================ form  ================= -->
+
+            <form>
+                <input class="name" type="text" placeholder="اسم العميل">
+                <input class="address" type="text" placeholder="عنوان العميل">
+                <input class="phone" type="tel" placeholder="هاتف العميل">
+                <input class="balance" type="number" placeholder="الرصيد الافتتاحي">
+                <input type="button" id="save" onclick="CRUD(id)" value="حــفــظ" class="btn_save">
+            </form>
+
+            <!-- ================ table ================= -->
+            <div class="recentOrders">
+                <table>
+                    <thead class="table-head">
+                        <tr>
+                            <td>ID</td>
+                            <td>الاسم</td>
+                            <td>العنوان</td>
+                            <td>الهاتف</td>
+                            <td>الرصيد</td>
+                            <td style="width: 150px;">تعديل - حذف</td>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-body">
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ================= New Customers ================ -->
+
+        </div>
+    </div>
+
+
+    <!-- =========== Scripts =========  -->
+    <script src="JS/Data_Customers.js"></script>
+    <script src="JS/main.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

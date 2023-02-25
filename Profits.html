@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>الأرباح</title>
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+
+    <div class="container">
+        <div class="navigation"></div>
+
+        <!-- ========================= Main ==================== -->
+
+        <div class="main">
+            <div class="topbar"></div>
+
+            <!-- ================ table ================= -->
+            <div class="cardBox1">
+                <a href="#" class="card" onclick="Doprint()">طباعة <ion-icon name="print-outline"></ion-icon></a>
+            </div>
+
+            <div class="recentOrders">
+                <table class="SpecialTable">
+                    <thead class="table-head">
+                        <tr>
+                            <td style="width: 150px;">الشهر </td>
+                            <td>التأجير</td>
+                            <td>الاستئجار</td>
+                            <td>مجمل الربح</td>
+                            <td>الايرادات</td>
+                            <td>المصروفات</td>
+                            <td>صافي الربح</td>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-body"></tbody>
+                </table>
+
+                <div class="charts">
+                    <div class="charts-card">
+                        <p class="chart-title"></p>
+                        <div id="radar-chart"></div>
+                    </div>
+                    <div class="charts-card">
+                        <p class="chart-title"></p>
+                        <div id="bar-chart"></div>
+                    </div>
+                </div>
+
+                <div class="charts last-charts">
+                    <div class="charts-card">
+                        <p class="chart-title"></p>
+                        <div id="bar-chart2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+
+    <script src="JS/main.js"></script>
+    <script src="JS/Profits.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

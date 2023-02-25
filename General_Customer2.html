@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>الدفع لـ عميل</title>
+
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+
+    <div class="container">
+        <div class="navigation"></div>
+
+        <!-- ========================= Main ==================== -->
+
+        <div class="main">
+            <div class="topbar"></div>
+
+            <div class="cardBox1">
+                <a href="Data_Customers.html" class="card">بيانات العملاء</a>
+                <a href="Account_Customer.html" class="card">كشف حساب عميل</a>
+                <a href="General_Customer1.html" class="card">التحصيل من عميل</a>
+                <a href="General_Customer2.html" class="card"> الدفع لـ عميل</a>
+            </div>
+            <!-- ================ form  ================= -->
+
+            <form>
+                <input  class="date" type="date">
+                <select class="nameCustomer">
+                    <option disabled selected hidden>اسم العميل</option>
+                </select>
+                <input class="price" type="number" placeholder="المبلغ ">
+                <input class="statement" type="text" placeholder="بيان">
+                <input type="button" onclick="insert_value(id)" id="credit" class="btn_save" value="حــفــظ">
+            </form>
+        </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="JS/General_Customer.js"></script>
+    <script src="JS/main.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
