@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>كشف حساب الموردين</title>
+
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+
+    <div class="container">
+        <div class="navigation"></div>
+
+        <!-- ========================= Main ==================== -->
+
+        <div class="main">
+            <div class="topbar"></div>
+
+            <div class="cardBox1">
+                <a href="Data_Suppliers.html" class="card">بيانات الموردين</a>
+                <a href="Account_Supplier.html" class="card">كشف حساب مورد</a>
+                <a href="General_Suppliers1.html" class="card">التحصيل من مورد</a>
+                <a href="General_Suppliers2.html" class="card"> الدفع لـ مورد</a>
+            </div>
+
+            <!-- ================ table ================= -->
+            <div class="cardBox1">
+                <div class="card"><span>من </span><input type="date" class="SDate" onchange="Search()"></div>
+                <div class="card"><span>الي</span><input type="date" class="EDate" onchange="Search()"></div>
+                <a href="#" class="card" onclick="Doprint()">طباعة <ion-icon name="print-outline"></ion-icon></a>
+            </div>
+
+            <div class="recentOrders">
+                <img class="account_img" src="https://b.top4top.io/p_2690widbx1.png">
+                <div class="Forprint print">
+                    <div style="width: 43%;">
+                        <h4>اسم المورد : <span class="nameCustomerData"></span></h4>
+                        <h4>المدين : <span class="dibitCustomerData"></span></h4>
+                        <h4>الدائن : <span class="creditCustomerData"></span></h4>
+                        <h4>الرصيد : <span class="balanceCustomerData"></span></h4>
+                    </div>
+                    <div style="display: flex ;justify-content: space-between;width: 50%;">
+                        <img src="https://e.top4top.io/p_2690n3msp2.png">
+                        <img src="https://i.top4top.io/p_2690iwb4u1.png">
+                    </div>
+                </div>
+                <table>
+                    <thead class="table-head">
+                        <tr>
+                            <td>.Nu</td>
+                            <td style="width: 120px;">التاريخ</td>
+                            <td style="width: 150px;">الاسم</td>
+                            <td style="width: 120px;">الصنف</td>
+                            <td>بيان</td>
+                            <td>مدين</td>
+                            <td>دائن</td>
+                            <td>الرصيد</td>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-body">
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ================= New Customers ================ -->
+
+        </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="JS/main.js"></script>
+    <script src="JS/Account_Supplier.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

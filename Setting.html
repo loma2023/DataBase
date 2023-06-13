@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>الإعدادات</title>
+
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+
+    <div class="container">
+        <div class="navigation"></div>
+
+        <!-- ========================= Main ==================== -->
+
+        <div class="main">
+            <div class="topbar"></div>
+
+            <!-- ================ form  ================= -->
+            <div class="cardBox1">
+                <a onclick="EditPaswWord()" class="card">تعديل كلمة المرور</a>
+            </div>
+
+            <form>
+                <input class="email"     type="email" placeholder="Example@gmail.com">
+                <input class="username"  type="text" placeholder="اسم المستخدم">
+                <input class="password"  type="password" placeholder="كلمة المرور">
+                <input class="Rpassword" type="password" placeholder="تأكيد كلمة المرور">
+                <input class="photo"     type="url" placeholder="رابط الصورة" style="width: 96.4%;">
+                <input type="button" id="save" onclick="CRUD(id)" class="btn_save" value="حــفــظ">
+            </form>
+            <!-- ================ table ================= -->
+            <div class="EditPass">
+                <form>
+                    <i onclick="Exit()" class="fas fa-times"></i>
+                    <input class="oldusername" type="text" placeholder="اسم المستخدم الحالى" required style="width: 100%;">
+                    <input class="oldpassword" type="password" placeholder="كلمة المرور الحاليه" required style="width: 100%;">
+                    <input type="button" onclick="ShowData()" class="btn_save" value="حسناَ">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="JS/main.js"></script>
+    <script src="JS/setting.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,621 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* "Ubuntu", */
+
+/* =============== Globals ============== */
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #035e7b;
+  --blue2: #13293D;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+  --red: red;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+
+html::-webkit-scrollbar-track {
+  background: #999;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 20px;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.container2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+/* =============== Navigation ================ */
+.navigation {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background: var(--blue);
+  border-right: 10px solid var(--blue);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navigation.active {
+  width: 80px;
+  background: var(--blue2);
+  border-right: 10px solid var(--blue2);
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+  margin-top: 30px;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 40px;
+  line-height: 75px;
+  text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  font-size: 20px;
+  padding: 0 10px;
+  height: 50px;
+  line-height: 50px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+/* --------- curve outside ---------- */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: -35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: -35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+/* ===================== Main ===================== */
+.main {
+  position: absolute;
+  width: calc(100% - 200px);
+  right: 200px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+
+.main.active {
+  width: calc(100% - 80px);
+  right: 80px;
+}
+
+.main-home {
+  background: url('https://l.top4top.io/p_2610gorg71.png')
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 25px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2rem;
+}
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ======================= Cards ====================== */
+.cardBox {
+  width: 100%;
+  position: relative;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.container2 .cardBox {
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 5px;
+}
+
+.container2 .cardBox .card {
+  padding: 15px;
+}
+
+.cardBox .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--blue);
+}
+
+.card button {
+  background: var(--blue);
+  width: 100%;
+  height: 60px;
+  font-size: 25px;
+  color: var(--white);
+  border-radius: 25px;
+  border: var(--white);
+}
+
+.card .numbers input {
+  width: 100px;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--red);
+}
+
+.cardBox .card .cardName {
+  color: var(--black2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 3.5rem;
+  color: var(--black2);
+}
+
+.cardBox .card:hover {
+  background: var(--blue);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx {
+  color: var(--white);
+}
+
+.cardBox1 {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.cardBox1 .card {
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+  background: var(--white);
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.cardBox1 .card input {
+  width: 78%;
+  height: 100%;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.cardBox1 .card:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.cardBox1 .card:hover input {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* ================== Order Details List ============== */
+
+form {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+form input,
+form select {
+  width: 48%;
+  height: 40px;
+  border-radius: 2px;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+
+form .btn_save {
+  cursor: pointer;
+  background-color: var(--blue);
+  color: var(--white);
+  box-shadow: 0px 5px 15px rgba(1, 1, 1, 25%);
+}
+
+.Formitem input {
+  width: 18.77%;
+}
+
+.recentOrders {
+  position: relative;
+  display: grid;
+  width: 100%;
+  margin-bottom: 100px;
+  padding: 20px;
+  /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); */
+  overflow-x: auto;
+}
+
+.recentOrders .Forprint {
+  padding: 10px 20px;
+  font-size: 18px;
+  display: flex;
+  box-shadow: 0px 0px 15px rgba(1, 1, 1, 25%);
+  margin-bottom: 10px;
+}
+
+.recentOrders .Forprint h4 {
+  padding-bottom: 8px;
+}
+
+.recentOrders .Forprint img {
+  width: 120px;
+  height: 120px;
+}
+
+.recentOrders .account_img {
+  width: 250px;
+  height: 80px;
+  margin-right: 37%;
+}
+
+.recentOrders table {
+  width: 100%;
+  margin-bottom: 50px;
+  border-collapse: collapse;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(1, 1, 1, 25%);
+}
+
+.recentOrders table tr {
+  color: var(--black1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.recentOrders table tr td:first-child {
+  width: 50px;
+}
+
+.recentOrders table thead td {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px;
+  border: 1px solid var(--white);
+  background: var(--blue2);
+  color: var(--white);
+}
+
+.recentOrders table tbody td {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.recentOrders table tr:hover {
+  cursor: default;
+}
+
+.recentOrders table tbody tr:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.recentOrders table tbody tr:hover td,
+.recentOrders table tbody tr:hover .fa-trash,
+.recentOrders table tbody tr:hover .fa-pen {
+  border: 1px solid var(--white);
+}
+
+.fa-trash,
+.fa-pen {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  width: 40%;
+  padding: 2px;
+  margin: 0 5px;
+  font-size: 20px;
+}
+
+.fa-trash:hover,
+.fa-pen:hover {
+  cursor: pointer;
+}
+
+.main .print {
+  display: none;
+}
+
+/* =============================== */
+
+.EditPass {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: -100vh;
+  transition: 1s;
+}
+
+.EditPass form {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: #fff;
+  width: 40%;
+  margin: auto;
+  margin-top: 200px;
+  padding: 40px 25px 10px 25px;
+  position: relative;
+}
+
+.EditPass i {
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* charts */
+
+.charts {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 8px;
+}
+
+.last-charts {
+  grid-template-columns: 1fr;
+  direction: ltr;
+}
+
+.charts .charts-card {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px rgba(1, 1, 1, 25%);
+}
+
+.charts .charts-card .chart-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+
+/* ====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+  .navigation {
+    right: -80px;
+  }
+
+  .navigation.active {
+    width: 80px;
+    right: 0;
+  }
+
+  .main {
+    width: 100%;
+    right: 0;
+  }
+
+  .main.active {
+    right: 80px;
+  }
+
+  .cardBox,
+  .cardBox1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container2 {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .cardBox,
+  .cardBox1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .recentOrders table {
+    width: 1000px;
+  }
+
+  .user {
+    width: 60px;
+  }
+
+  form input,
+  form select,
+  .Formitem input {
+    width: 96.4%;
+  }
+
+  .EditPass form {
+    width: 90%;
+  }
+
+  .main-home {
+    background: url('https://d.top4top.io/p_2611vd5f92.jpg') no-repeat fixed;
+  }
+
+}
